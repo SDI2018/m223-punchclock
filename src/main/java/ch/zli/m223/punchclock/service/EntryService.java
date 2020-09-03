@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import javax.ws.rs.PathParam;
+
 @Service
 public class EntryService {
     private EntryRepository entryRepository;
@@ -16,6 +18,15 @@ public class EntryService {
 
     public Entry createEntry(Entry entry) {
         return entryRepository.saveAndFlush(entry);
+    }
+    
+    public void deleteEntry(Long id) {
+    	entryRepository.deleteById(id);
+    	
+    }
+    
+    public Entry updateEntry(Entry entry) {
+    	return entryRepository.save(entry);
     }
 
     public List<Entry> findAll() {
