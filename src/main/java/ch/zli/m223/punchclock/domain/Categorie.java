@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Kategorie {
+public class Categorie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -15,7 +15,7 @@ public class Kategorie {
 	@NotNull
 	private String name;
 	
-	@OneToMany(mappedBy="kategorie")
+	@OneToMany(mappedBy="categorie")
 	private List<Entry> entry = new ArrayList<Entry>();
 
 	public Long getId() {

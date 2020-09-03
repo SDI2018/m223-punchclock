@@ -17,7 +17,7 @@ public class Entry {
     
     @ManyToOne
     @JoinColumn(name = "kategorie_id", referencedColumnName = "id")
-    private Kategorie kategorie;
+    private Categorie categorie;
 
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
