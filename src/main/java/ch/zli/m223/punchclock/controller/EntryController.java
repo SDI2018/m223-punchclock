@@ -6,9 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-
 import java.util.List;
 
 @RestController
@@ -32,7 +29,7 @@ public class EntryController {
         return entryService.createEntry(entry);
     }
     
-    @DeleteMapping(value = "{id}")
+    @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEntry(@PathVariable("id") Long id) {
     	entryService.deleteEntry(id);
