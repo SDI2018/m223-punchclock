@@ -15,9 +15,13 @@ public class Entry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne
-    @JoinColumn(name = "kategorie_id", referencedColumnName = "id")
-    private Categorie categorie;
+    // @ManyToOne
+    // @JoinColumn(name = "kategorie_id", referencedColumnName = "id")
+    // private Categorie categorie;
+    
+    // @ManyToOne
+    // @JoinColumn(name = "user_id", referencedColumnName = "id")
+    // private ApplicationUser applicationUser;
 
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
