@@ -1,4 +1,4 @@
-package ch.zli.m223.security;
+package ch.zli.m223.punchclock.security;
 
 
 import com.auth0.jwt.JWT;
@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
-import static ch.zli.m223.security.SecurityConstants.EXPIRATION_TIME;
-import static ch.zli.m223.security.SecurityConstants.HEADER_STRING;
-import static ch.zli.m223.security.SecurityConstants.SECRET;
-import static ch.zli.m223.security.SecurityConstants.TOKEN_PREFIX;
+import static ch.zli.m223.punchclock.security.SecurityConstants.EXPIRATION_TIME;
+import static ch.zli.m223.punchclock.security.SecurityConstants.HEADER_STRING;
+import static ch.zli.m223.punchclock.security.SecurityConstants.SECRET;
+import static ch.zli.m223.punchclock.security.SecurityConstants.TOKEN_PREFIX;
 
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {

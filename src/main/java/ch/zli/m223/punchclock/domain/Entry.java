@@ -14,14 +14,14 @@ public class Entry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    // @ManyToOne
-    // @JoinColumn(name = "kategorie_id", referencedColumnName = "id")
-    // private Categorie categorie;
-    
-    // @ManyToOne
-    // @JoinColumn(name = "user_id", referencedColumnName = "id")
-    // private ApplicationUser applicationUser;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private ApplicationUser applicationUser;
 
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
@@ -56,4 +56,14 @@ public class Entry {
     public void setCheckOut(LocalDateTime checkOut) {
         this.checkOut = checkOut;
     }
+
+    public void setCategory(Category category){
+        this.category=category;
+    }
+
+    public Category getCategory(){
+        return category;
+    }
+
+
 }

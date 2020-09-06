@@ -17,8 +17,8 @@ public class ApplicationUser {
     private String username;
     private String password;
 
-    // @OneToMany(mappedBy="applicationUser")
-	// private List<Entry> entry = new ArrayList<Entry>();
+    @OneToMany(mappedBy="applicationUser")
+	private List<Entry> entry = new ArrayList<Entry>();
     
     
     public long getId() {
@@ -41,12 +41,11 @@ public class ApplicationUser {
         this.password = password;
     }
     
-    // public List<Entry> getEntry() {
-	// 	return entry;
-	// }
-
-	// public void setEntry(List<Entry> entry) {
-	// 	this.entry = entry;
-	// }
+     public List<Entry> getEntry() {
+	 	return entry;
+	 }
+	 public void setEntry(List<Entry> entry) {
+	 	this.entry = entry;
+	 }
     
 }

@@ -1,4 +1,4 @@
-package ch.zli.m223.security;
+package ch.zli.m223.punchclock.security;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,7 +13,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.context.annotation.Bean;
 
-import static ch.zli.m223.security.SecurityConstants.SIGN_UP_URL;
+import static ch.zli.m223.punchclock.security.SecurityConstants.SIGN_UP_URL;
 
 
 

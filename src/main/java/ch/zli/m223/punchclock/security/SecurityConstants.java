@@ -1,4 +1,4 @@
-package ch.zli.m223.security;
+package ch.zli.m223.punchclock.security;
 
 
 public class SecurityConstants {
