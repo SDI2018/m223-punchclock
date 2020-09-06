@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class ApplicationUser {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

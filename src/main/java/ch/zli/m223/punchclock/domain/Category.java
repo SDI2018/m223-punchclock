@@ -15,8 +15,8 @@ public class Category {
 	@NotNull
 	private String name;
 	
-	// @OneToMany(mappedBy="categorie")
-	// private List<Entry> entry = new ArrayList<Entry>();
+	 @OneToMany(mappedBy="category")
+	 private List<Entry> entry = new ArrayList<Entry>();
 
 	public Long getId() {
 		return id;
@@ -34,13 +34,13 @@ public class Category {
 		this.name = name;
 	}
 
-	// public List<Entry> getEntry() {
-	// 	return entry;
-	// }
+	 public List<Entry> getEntry() {
+	 	return entry;
+	 }
 
-	// public void setEntry(List<Entry> entry) {
-	// 	this.entry = entry;
-	// }
+	 public void setEntry(List<Entry> entry) {
+	 	this.entry = entry;
+	 }
 	
 	
 
