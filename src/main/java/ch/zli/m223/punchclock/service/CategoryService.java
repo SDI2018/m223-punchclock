@@ -21,6 +21,8 @@ public class CategoryService {
 	public Category createCategory(Category category) { return categoryRepository.saveAndFlush(category);
 	}
 
+	public Category findById(Long id){ return categoryRepository.getOne(id);}
+
 	public void deleteCategory(Long id){categoryRepository.deleteById(id);}
 
 	public Category updateCategory(Category category){
