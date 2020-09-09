@@ -1,5 +1,9 @@
 package ch.zli.m223.punchclock.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -19,8 +23,9 @@ public class ApplicationUser {
     private String username;
     private String password;
 
+    @JsonIgnore
     @OneToMany(mappedBy="applicationUser")
-	private Set<Entry> entries;
+  	private Set<Entry> entries;
     
     public long getId() {
         return id;
@@ -42,13 +47,14 @@ public class ApplicationUser {
         this.password = password;
     }
     
-     public Set<Entry> getEntry() {
+     public Set<Entry> getEntries() {
 	 	return entries;
 	 }
 
-	 public void setEntry(Set<Entry> entry) {
-	 	this.entries = entry;
+	 public void setEntries(Set<Entry> entries) {
+	 	this.entries = entries;
 	 }
+
     @Override
     public String toString() {
         String result = String.format("Category[id=%d,username='%s']%n",

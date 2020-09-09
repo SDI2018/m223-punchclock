@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -30,9 +31,9 @@ public class EntryController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Entry createEntry(@Valid @RequestBody Entry entry, BindingResult result) {
-        Entry newEntry = entryService.createEntry(entry);
-        //newEntry.setCategory(categoryService.findById(category_id);
+    public Entry createEntry(@Valid @RequestBody Entry entry, Principal principal) {
+        Entry newEntry = entryService.createEntry(entry, principal);
+
         return newEntry;
     }
 

@@ -1,6 +1,7 @@
 package ch.zli.m223.punchclock.domain;
 
 import ch.zli.m223.punchclock.service.CategoryService;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
@@ -28,13 +29,11 @@ public class Entry {
 
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @FutureOrPresent
     @Column(nullable = false)
     private LocalDateTime checkIn;
 
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @Future
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
@@ -70,5 +69,11 @@ public class Entry {
         return category;
     }
 
+    public ApplicationUser getApplicationUser() {
+        return applicationUser;
+    }
 
+    public void setApplicationUser(ApplicationUser applicationUser) {
+        this.applicationUser = applicationUser;
+    }
 }

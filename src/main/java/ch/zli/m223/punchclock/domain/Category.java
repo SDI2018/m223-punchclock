@@ -1,5 +1,9 @@
 package ch.zli.m223.punchclock.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -16,6 +20,8 @@ public class Category {
     @NotNull
     private String name;
 
+    @JsonIgnore
+    //@JsonBackReference
     @OneToMany(mappedBy = "category")
     private Set<Entry> entries;
 
