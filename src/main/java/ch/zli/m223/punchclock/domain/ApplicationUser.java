@@ -2,6 +2,7 @@ package ch.zli.m223.punchclock.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,7 @@ public class ApplicationUser {
     private String password;
 
     @OneToMany(mappedBy="applicationUser")
-	private List<Entry> entry = new ArrayList<Entry>();
-    
+	private Set<Entry> entries;
     
     public long getId() {
         return id;
@@ -42,11 +42,26 @@ public class ApplicationUser {
         this.password = password;
     }
     
-     public List<Entry> getEntry() {
-	 	return entry;
+     public Set<Entry> getEntry() {
+	 	return entries;
 	 }
-	 public void setEntry(List<Entry> entry) {
-	 	this.entry = entry;
+
+	 public void setEntry(Set<Entry> entry) {
+	 	this.entries = entry;
 	 }
-    
+    @Override
+    public String toString() {
+        String result = String.format("Category[id=%d,username='%s']%n",
+                id,
+                username);
+
+        if (entries != null) {
+            for (Entry entry : entries) {
+                result += result =
+                        String.format("Entry[id=%d,checkIn='%i',checkOut='%o']%n",
+                                entry.getId(), entry.getCheckIn(), entry.getCheckOut());
+            }
+        }
+        return result;
+    }
 }

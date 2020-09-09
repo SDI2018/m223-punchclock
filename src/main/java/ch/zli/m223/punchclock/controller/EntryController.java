@@ -5,6 +5,7 @@ import ch.zli.m223.punchclock.service.CategoryService;
 import ch.zli.m223.punchclock.service.EntryService;
 import ch.zli.m223.punchclock.service.UserService;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -29,7 +30,7 @@ public class EntryController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Entry createEntry(@Valid @RequestBody Entry entry) {
+    public Entry createEntry(@Valid @RequestBody Entry entry, BindingResult result) {
         Entry newEntry = entryService.createEntry(entry);
         //newEntry.setCategory(categoryService.findById(category_id);
         return newEntry;

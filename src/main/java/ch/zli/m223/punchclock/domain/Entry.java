@@ -22,9 +22,6 @@ public class Entry {
     @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = true)
     private Category category;
 
-   /* @Column(insertable = false, updatable = true)
-    private Long category_id;*/
-
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private ApplicationUser applicationUser;
@@ -48,12 +45,6 @@ public class Entry {
     public void setId(Long id) {
         this.id = id;
     }
-
-//    public Long getCategory_id() {
-//        return category_id;
-//    }
-//
-//    public void setCategory_id(Long id){this.category_id = category_id;}
 
     public LocalDateTime getCheckIn() {
         return checkIn;
