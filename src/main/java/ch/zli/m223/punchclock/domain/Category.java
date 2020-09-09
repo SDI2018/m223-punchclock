@@ -21,7 +21,6 @@ public class Category {
     private String name;
 
     @JsonIgnore
-    //@JsonBackReference
     @OneToMany(mappedBy = "category")
     private Set<Entry> entries;
 

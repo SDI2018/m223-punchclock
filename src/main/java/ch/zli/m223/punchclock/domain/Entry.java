@@ -24,6 +24,10 @@ public class Entry {
     private Category category;
 
     @ManyToOne
+    @JoinColumn(name = "project_id", referencedColumnName = "id", insertable = true)
+    private Project project;
+
+    @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private ApplicationUser applicationUser;
 

@@ -25,13 +25,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-jersey'
 	implementation 'org.codehaus.jackson:jackson-jaxrs:1.9.13'
-	//implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'com.h2database:h2'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	//testImplementation 'org.springframework.security:spring-security-test'
-	compile("org.springframework.boot:spring-boot-starter-security")
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.security:spring-security-test'
+	testCompile("org.springframework.boot:spring-boot-starter-security")
 	// compile('javax.xml.bind:jaxb-api:2.3.1')
 	compile("com.auth0:java-jwt:3.4.0")
         compile group: 'org.postgresql', name: 'postgresql', version: '9.4-1206-jdbc42'

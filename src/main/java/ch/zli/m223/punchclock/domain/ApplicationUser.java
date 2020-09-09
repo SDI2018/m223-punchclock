@@ -8,11 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class ApplicationUser {
@@ -26,7 +22,12 @@ public class ApplicationUser {
     @JsonIgnore
     @OneToMany(mappedBy="applicationUser")
   	private Set<Entry> entries;
-    
+
+//    @JsonIgnore
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(name = "applicationUser_roles", joinColumns = @JoinColumn(name = "applicationUser_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+//    private Set<Role> roles;
+
     public long getId() {
         return id;
     }

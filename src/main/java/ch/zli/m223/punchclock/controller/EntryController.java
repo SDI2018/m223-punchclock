@@ -38,11 +38,11 @@ public class EntryController {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.OK)
     public void deleteEntry(@PathVariable("id") Long id){ entryService.deleteEntry(id);}
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public Entry updateEntry(@Valid @RequestBody Entry entry){ return entryService.updateEntry(entry);}
+    public Entry updateEntry(@Valid @RequestBody Entry entry, Principal principal){ return entryService.updateEntry(entry, principal);}
 
 }
