@@ -18,21 +18,39 @@ public class CategoryController {
 
     public CategoryController(CategoryService categoryService){this.categoryService = categoryService;}
 
+    /**
+     * Gibt eine Liste aller Category Datensätze zurück
+     * @return List<Category>
+     */
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Category> getAllCategories() {
         return categoryService.findAll();
     }
 
+    /**
+     * Erzeugt einen neuen category Datensatz
+     * @param category
+     * @return category
+     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Category createCategory(@Valid @RequestBody Category category) { return categoryService.createCategory(category);
     }
 
+    /**
+     * Löscht einen bestehenden category Datensatz anhand der ID
+     * @param id
+     */
     @DeleteMapping("{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.OK)
     public void deleteCategory(@PathVariable("id") Long id){ categoryService.deleteCategory(id);}
 
+    /**
+     * Aktualisiert einen bestehenden category Datensatz
+     * @param category
+     * @return category
+     */
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public Category updateCategory(@Valid @RequestBody Category category){ return categoryService.updateCategory(category);}

@@ -26,7 +26,7 @@ public class EntryService {
     public void deleteEntry(Long id){entryRepository.deleteById(id);}
 
     public Entry updateEntry(Entry entry,Principal principal){
-        if (entryRepository.findById(entry.getId())!=null){
+        if (entryRepository.findById(entry.getId()).isPresent()){
             entry.setApplicationUser(userRepository.findByUsername(principal.getName()));
             return entryRepository.save(entry);
         }
@@ -35,5 +35,9 @@ public class EntryService {
 
     public List<Entry> findAll() {
         return entryRepository.findAll();
+    }
+
+    public List<Entry> getEntriesByProjectId(Long id) {
+       return entryRepository.findEntryByProjectId(id);
     }
 }

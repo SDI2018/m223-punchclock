@@ -65,13 +65,13 @@ public class Entry {
         this.checkOut = checkOut;
     }
 
-    public void setCategory(Category category){
-        this.category=category;
-    }
+    public void setCategory(Category category) { this.category = category; }
 
-    public Category getCategory(){
-        return category;
-    }
+    public Category getCategory() { return category; }
+
+    public Project getProject() { return project; }
+
+    public void setProject(Project project) {this.project = project;}
 
     public ApplicationUser getApplicationUser() {
         return applicationUser;
@@ -80,4 +80,6 @@ public class Entry {
     public void setApplicationUser(ApplicationUser applicationUser) {
         this.applicationUser = applicationUser;
     }
+
+
 }

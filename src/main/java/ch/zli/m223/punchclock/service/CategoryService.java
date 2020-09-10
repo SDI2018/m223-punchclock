@@ -26,7 +26,7 @@ public class CategoryService {
 	public void deleteCategory(Long id){categoryRepository.deleteById(id);}
 
 	public Category updateCategory(Category category){
-		if (categoryRepository.findById(category.getId())!=null){
+		if (categoryRepository.findById(category.getId()).isPresent()){
 			return categoryRepository.save(category);
 		}
 		return null;

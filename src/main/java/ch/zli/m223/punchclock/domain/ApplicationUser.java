@@ -1,13 +1,8 @@
 package ch.zli.m223.punchclock.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
-
 import javax.persistence.*;
 
 @Entity
