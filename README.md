@@ -25,9 +25,13 @@ Hinzufügen von Stunden ohne Kategorie und Projekt möglicht.
 Die App erlaubt das verwalten von Kategorien, Projekte, Zeiteinträgen inklusive Projekt und Kategorie beim erstellen, sowie die Benutzerverwaltung.
 
 Alle Funktionen sind in den jeweiligen Controllern für die Pfade kommmentiert
+
 /entries
+
 /category
+
 /project
+
 /users
 
 
