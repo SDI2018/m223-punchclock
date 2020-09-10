@@ -1,25 +1,20 @@
-    <!doctype html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>App</title>
+        <title>Punchclock Login</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="script.js" type="application/javascript"></script>
     </head>
-<body>
-<div>
-    <section> <strong>Login</strong></section>
-
-    <div>
-        <label for="username">Username</label>
-        <input type="text" id="username">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password">
-    </div>
-
-    <input type="button" onclick="login();" value="Authenticate">
-</div>
-</body>
+    <body>
+        <form id="createLoginForm">
+            <label for="username">Benutzername</label>
+            <input type="text" name="username" id= "username" required>
+            <input type="password" name="password" id="password" required>
+            <input type="submit" formmethod="POST" value="Save" />
+        </form>
+    </body>
+</html>
