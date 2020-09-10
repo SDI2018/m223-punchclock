@@ -31,7 +31,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().headers().frameOptions().and().disable().authorizeRequests()
-                .antMatchers(HttpMethod.POST, SIGN_UP_URL, LOGIN_URL).permitAll()
+                .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
+                .antMatchers(HttpMethod.GET, LOGIN_URL).permitAll()
+                .antMatchers(HttpMethod.GET,"/register.html").permitAll()
+                .antMatchers(HttpMethod.GET, "/script.js").permitAll()
+                .antMatchers(HttpMethod.GET, "/style.css").permitAll()
+                .antMatchers(HttpMethod.GET, "/").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated()
                 .and()

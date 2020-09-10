@@ -40,10 +40,11 @@ public class Category {
         this.name = name;
     }
 
+    @JsonIgnore
     public Set<Entry> getEntry() {
         return entries;
     }
-
+    @JsonIgnore
     public void setEntry(Set<Entry> entries) {
         this.entries = entries;
     }

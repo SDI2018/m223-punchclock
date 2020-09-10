@@ -9,6 +9,9 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script src="script.js" type="application/javascript"></script>
     </head>
+    <a href="register.html">Registrieren</a>
+    <a href="login.html">Einloggen</a>
+    <a href="login.html">Abmelden</a>
     <body>
         <form id="createEntryForm">
             <label for="checkIn">Check in</label>
@@ -34,4 +37,40 @@
             </tbody>
         </table>
     </body>
+        <body>
+        <form id="createCategoryForm">
+            <label for="name">Category Name</label>
+            <input type="text" name="Kategorie" id="name" required>
+
+            <input type="submit" formmethod = POST value="Save" />
+        </form>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody id="categoryDisplay">
+            <tr>
+                <td colspan="3">Loading...</td>
+            </tr>
+            </tbody>
+        </table>
+        </body>
+    <script>
+        const createEntryForm = document.querySelector('#createEntryForm');
+        createEntryForm.addEventListener('submit', createEntry);
+
+        const createCategoryForm = document.querySelector('#createCategoryForm');
+        createCategoryForm.addEventListener('submit', createCategory);
+
+        const createProjectForm = document.querySelector('#createProjectForm');
+        createProjectForm.addEventListener('submit', createProject);
+
+        indexEntries();
+        indexProjects();
+        indexCategories();
+    </script>
+
 </html>

@@ -27,10 +27,12 @@ public class Project {
         this.id = id;
     }
 
+    @JsonIgnore
     public Set<Entry> getEntry() {
         return entries;
     }
 
+    @JsonIgnore
     public void setEntry(Set<Entry> entries) {
         this.entries = entries;
     }

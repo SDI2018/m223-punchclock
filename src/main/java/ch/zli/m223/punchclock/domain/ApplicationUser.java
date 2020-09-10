@@ -42,12 +42,12 @@ public class ApplicationUser {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-     public Set<Entry> getEntries() {
+
+    public Set<Entry> getEntries() {
 	 	return entries;
 	 }
 
-	 public void setEntries(Set<Entry> entries) {
+    public void setEntries(Set<Entry> entries) {
 	 	this.entries = entries;
 	 }
 

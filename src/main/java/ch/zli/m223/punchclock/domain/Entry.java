@@ -20,11 +20,11 @@ public class Entry {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = true)
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
     @ManyToOne
-    @JoinColumn(name = "project_id", referencedColumnName = "id", insertable = true)
+    @JoinColumn(name = "project_id", referencedColumnName = "id")
     private Project project;
 
     @ManyToOne
