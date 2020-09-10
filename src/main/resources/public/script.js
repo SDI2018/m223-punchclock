@@ -68,14 +68,14 @@ const doRegister = (e) => {
     const formData = new FormData(e.target);
     const regData = {};
     regData['username'] = formData.get('username')
-    loginsub['password'] = formData.get('password')
+    regData['password'] = formData.get('password')
 
     fetch(`${URL}/sign-up`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(loginsub)
+        body: JSON.stringify(regData)
     }).then((result) => {
         if (result.ok){
             window.location.href = "/"

@@ -15,6 +15,12 @@ public class UserService {
 
         public Optional<ApplicationUser> findById(Long id){ return applicationUserRepository.findById(id);}
 
+    public ApplicationUser updateUser(ApplicationUser applicationUser) {
+        if (applicationUserRepository.findById(applicationUser.getId()).isPresent()){
+            return applicationUserRepository.save(applicationUser);
+        }
+        return null;
     }
+}
 
 
