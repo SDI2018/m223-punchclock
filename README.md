@@ -8,17 +8,27 @@ Folgende Schritte befolgen um loszulegen:
 1. Unittest mit `./gradlew test` oder `./gradlew.bat test` ausführen.
 1. Ein ausführbares JAR kann mit `./gradlew bootJar` oder `./gradlew.bat bootJar` erstellt werden.
 
-Folgende Dienste stehen während der Ausführung im Profil `dev` zur Verfügung:
+Folgende Dienste stehen während der Ausführung zur Verfügung:
 - REST-Schnittstelle der Applikation: http://localhost:8081
 - Dashboard der H2 Datenbank: http://localhost:8081/h2-console
 
+Die H2 Datenbank läuft in Memory (:mem:punchclock)
 
 ## Anwendung verwenden
 
-Leider gibt es noch kein UI. Über die REST Schnittstelle kann jedoch schon mal die Funktionalität geprüft werden.
-Dazu kann Postman verwendet werden.
+Leider gibt es noch kein vollständig funktionierendes UI. 
+Benutzer Registrierung und Login möglich.
+Hinzufügen von Stunden ohne Kategorie und Projekt möglicht.
 
-Beschreibung der URI
+Über die REST Schnittstelle kann jedoch schon mal die vollständige Funktionalität geprüft werden.
 
-/sign-up 		Hier kann ein Benutzerkonto erzeugt werden mit Angabe von "username" : "meinname", "password" : "meinpasswort"
-/login			Hier wird mit einem gültigen Konto die Anmeldung
+Die App erlaubt das verwalten von Kategorien, Projekte, Zeiteinträgen inklusive Projekt und Kategorie beim erstellen, sowie die Benutzerverwaltung.
+
+Alle Funktionen sind in den jeweiligen Controllern für die Pfade kommmentiert
+/entries
+/category
+/project
+/users
+
+
+
